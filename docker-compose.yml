@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  db:
+    container_name: app_db
+    image: mysql:5.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=password123
+      - MYSQL_DATABASE=app_development
+  backend:
+    container_name: app_backend
+    build: .
+    command: rails s --binding=0.0.0.0
+    entrypoint: ./scripts/entrypoint.sh
+    links:
+      - db
+      - frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+      - frontend
+  frontend:
+    container_name: app_frontend
+    build: ./client
+    command: npm run dev
+    entrypoint: ./scripts/entrypoint.sh
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:8080
+    environment:
+      NODE_ENV: development
