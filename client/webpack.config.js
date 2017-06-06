@@ -9,10 +9,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var dashboard = new Dashboard()
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
+  context: path.join(__dirname, './src'),
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:8080',
+      'webpack-dev-server/client?http://localhost:8080/',
       'webpack/hot/only-dev-server',
       // 'react-hot-loader/patch',
       'whatwg-fetch',
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
     publicPath: 'http://localhost:8080/'
   },
@@ -57,19 +57,20 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      names: 'vendor',
       filename: 'vendor.bundle.js'
     }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     }),
-    new DashboardPlugin(dashboard.setData)
-    // new HtmlWebpackPlugin({
-    //   title: 'React Frontend',
-    //   template: "index.html",
-    //   filename: "/app/public/index.html",
-    //   minify: false
-    // })
+    new DashboardPlugin(dashboard.setData),
+    new HtmlWebpackPlugin({
+      title: 'React Frontend',
+      template: path.join(__dirname, "src/index.html"),
+      filename: "index.html",
+      // path: path.join(__dirname, './dist'),
+      minify: false
+    })
   ],
 
   devtool: 'source-map',

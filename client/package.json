@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --config ./webpack-prod.config.js --progress --profile --colors --optimize-minimize --optimize-dedupe && cp -R src/static/ dist/static",
     "start": "node server.js",
-    "dev": "webpack-dev-server --hot --inline --progress --colors --host=0.0.0.0 --content-base",
+    "dev": "webpack-dev-server --hot --inline --progress --colors --host=0.0.0.0 --content-base ./dist",
     "test": "echo \"No unit tests and e2e tests yet\" && exit 1"
   },
   "dependencies": {

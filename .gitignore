@@ -9,6 +9,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+.npm
 
 # Secret will not be stored on github
 config/initializers/secret_token.rb
