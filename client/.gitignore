@@ -1,7 +1,6 @@
-# Ignore
-/node_modules
-.npm-debug*
-/dist/*.js
-/dist/*.css
-/dist/static/
-/dist/index.html
+.DS_STORE
+node_modules
+build
+.module-cache
+*.log*
+_nogit
