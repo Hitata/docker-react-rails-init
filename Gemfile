@@ -20,5 +20,7 @@ group :development do
 end
 
 gem 'devise', '> 4.x'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
+gem 'arctic_admin' #active_admin theme
+gem 'activeadmin_addons'
