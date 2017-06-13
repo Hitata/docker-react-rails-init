@@ -18,3 +18,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pretty_routes'
 end
+
+gem 'devise', '> 4.x'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
