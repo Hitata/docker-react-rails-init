@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613052723) do
+ActiveRecord::Schema.define(version: 20170613081809) do
 
   create_table "accounts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "email", default: "", null: false
@@ -159,7 +159,6 @@ ActiveRecord::Schema.define(version: 20170613052723) do
     t.string "kanji_name"
     t.string "telephone"
     t.text "profile"
-    t.string "gender"
     t.string "linkedin_url"
     t.string "twitter_url"
     t.string "facebook_url"
@@ -196,9 +195,9 @@ ActiveRecord::Schema.define(version: 20170613052723) do
     t.string "resume_en"
     t.string "resume_ja"
     t.string "document"
+    t.integer "gender", default: 0
     t.index ["dob_year"], name: "index_candidates_on_dob_year"
     t.index ["first_name"], name: "index_candidates_on_first_name"
-    t.index ["gender"], name: "index_candidates_on_gender"
     t.index ["last_name"], name: "index_candidates_on_last_name"
     t.index ["linkedin_url"], name: "index_candidates_on_linkedin_url"
     t.index ["looking_for"], name: "index_candidates_on_looking_for"
