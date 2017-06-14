@@ -10,6 +10,12 @@ gem 'puma', '~> 3.0'
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
+  
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
