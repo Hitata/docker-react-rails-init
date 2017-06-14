@@ -4,6 +4,7 @@ class AdminUser < ActiveRecord::Base
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  # has_many :favourites, inverse_of: :admin_user
+  # has_many :notes, inverse_of: :admin_user
 
 end
