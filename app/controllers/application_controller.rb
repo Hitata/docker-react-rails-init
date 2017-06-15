@@ -1,5 +1,3 @@
-class ApplicationController < ActionController::API
-  def hello
-    render json: { title: 'React and Rails' }
-  end
+class ApplicationController < ActionController::Base
+  include ActionView::Layouts
 end

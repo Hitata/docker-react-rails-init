@@ -9,6 +9,8 @@ services:
       - MYSQL_USER=app
       - MYSQL_PASSWORD=password123
       - MYSQL_DATABASE=app_development
+    ports:
+      - 3306:3306
   backend:
     container_name: backend
     build: .
@@ -21,7 +23,6 @@ services:
       - ./:/app
     depends_on:
       - db
-      - frontend
   frontend:
     container_name: frontend
     build: ./client
@@ -30,6 +31,8 @@ services:
     entrypoint: ./scripts/entrypoint.sh
     volumes:
       - ./:/app
+    depends_on:
+      - backend
     ports:
       - 8080:8080
     environment:

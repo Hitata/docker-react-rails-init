@@ -16,8 +16,8 @@ if [ ! -f ./tmp/db.sem ]; then
 fi
 
 # Migrations
-echo -e "\nRunning migrations"
-bin/rake db:migrate
+# echo -e "\nRunning migrations"
+# bin/rake db:migrate
 
 # Run!
 echo -e "\nRunning server"
