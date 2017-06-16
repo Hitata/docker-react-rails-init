@@ -9,6 +9,7 @@ import logger from 'dev/logger';
 import rootReducer from 'reducers';
 import Routes from 'routes';
 
+import {getAllSkill} from 'actions/skillAction';
 // Load SCSS
 import '../scss/app.scss';
 
@@ -47,7 +48,6 @@ if (isProduction) {
     enhancer
   );
 }
-
 
 // Render it to DOM
 ReactDOM.render(
