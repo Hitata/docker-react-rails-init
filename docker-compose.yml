@@ -27,7 +27,7 @@ services:
     container_name: frontend
     build: ./client
     image: image_front
-    command: npm start
+    command: npm start -s
     entrypoint: ./scripts/entrypoint.sh
     volumes:
       - ./:/app

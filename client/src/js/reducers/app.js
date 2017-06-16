@@ -1,4 +1,4 @@
-import { Map } from 'immutable';
+import initialState from 'reducers/initialState';
 
 import {
   TEST_ACTION,
@@ -7,12 +7,7 @@ import {
   TEST_ASYNC_ACTION_SUCCESS,
 } from 'actions/app';
 
-const initialState = Map({
-  counter: 0,
-  asyncLoading: false,
-  asyncError: null,
-  asyncData: null,
-});
+
 
 const actionsMap = {
   [TEST_ACTION]: (state) => {
