@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { testAction, testAsync } from 'actions/app';
 import Icon from 'components/Global/Icon';
 import bookImg from '../../../assets/img/book2.jpg';
@@ -48,6 +49,7 @@ export default class Dashboard extends Component {
       counter,
     } = this.props;
 
+    console.log(this.props)
     return (
       <div className='Dashboard'>
         <h1></h1>
