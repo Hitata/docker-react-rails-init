@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ImmutablePropTypes from "react-immutable-proptypes";
+
 import {Link} from 'react-router'
 
 const SkillList = ({skills}) => {
   return (
       <ul className="list-group">
         {skills.map((skill) =>
-          <li key={skill.id}>
-            <Link to={'/skills/' + skill.id}>{skill.name_en}</Link>
+          <li key={skill.get('id')}>
+            <Link to={'/skills/' + skill.get('id')}>{skill.get('name_en')}</Link>
           </li>
         )}
       </ul>
@@ -15,7 +17,7 @@ const SkillList = ({skills}) => {
 };
 
 SkillList.propTypes = {
-  skills: PropTypes.array.isRequired
+  skills: ImmutablePropTypes.list.isRequired,
 };
 
 export default SkillList;

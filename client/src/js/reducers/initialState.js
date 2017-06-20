@@ -1,6 +1,6 @@
-import { Map } from 'immutable';
+import { fromJS } from 'immutable';
 
-export default Map({
+export default fromJS({
   counter: 0,
   asyncLoading: false,
   asyncError: null,

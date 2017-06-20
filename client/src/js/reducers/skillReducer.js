@@ -6,10 +6,9 @@ import {
 
 const actionsMap = {
   [GET_ALL_SKILL_SUCCESS]: (state, action) => {
-    //Temporary not using merge
-    return {
-      skills: action.skills,
-    }
+    return state.merge({
+      skills: action.skills
+    });
   },
 };
 
