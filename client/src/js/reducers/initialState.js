@@ -1,10 +1,10 @@
-// import { Map } from 'immutable';
+import { Map } from 'immutable';
 
-export default {
+export default Map({
   counter: 0,
   asyncLoading: false,
   asyncError: null,
   asyncData: null,
 
   skills: [],
-}
+})

@@ -28,12 +28,12 @@ export default class SkillContainer extends Component {
 
   render() {
     const {skills} = this.props;
+    console.log(this.props)
     return (
       <div className='Skills'>
         <h2>Skills List </h2>
         <hr />
         <button onClick={ this.handlePopulateSkillButton } >Populate Skills</button>
-        <SkillList skills = { skills }/>
       </div>
     );
   }
